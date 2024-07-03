@@ -56,7 +56,7 @@ public class SecurityConfig {
         //경로별 인가 작업
         http
                 .authorizeHttpRequests((auth) -> auth
-                        .requestMatchers("/login", "/", "join").permitAll()
+                        .requestMatchers("/login", "/", "/join").permitAll()
                         //인증되지 않은 사용자도 위 경로에 접근 가능
                         .requestMatchers("/admin").hasRole("ADMIN")
                         // /admin 경로에 대한 요청은 ADMIN 역할을 가진 사용자만 접근 가능
